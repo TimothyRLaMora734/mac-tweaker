@@ -9,16 +9,20 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    let osVersion = ProcessInfo().operatingSystemVersion
     let userDefaults = UserDefaults(suiteName: "com.apple.Finder")
+    
+    func isKeyPresentInUserDefaults(suiteName: String, forKey: String) -> Bool {
+        return UserDefaults(suiteName: suiteName)?.object(forKey: forKey) != nil
+    }
 
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
         
-        if (userDefaults!.bool(forKey: "AppleShowAllFiles")) {
-            FinderHiddenFilesOutlet.state = NSControl.StateValue.on
-        } else {
-            FinderHiddenFilesOutlet.state = NSControl.StateValue.off
+        // Disable checkbox on unsupported OS versions
+        if (osVersion.majorVersion < 10 && osVersion.minorVersion < 12) {
+            FinderHiddenFilesOutlet.isEnabled = false
         }
     }
 
