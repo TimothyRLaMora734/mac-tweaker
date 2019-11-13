@@ -9,11 +9,17 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    let userDefaults = UserDefaults(suiteName: "com.apple.Finder")
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        super.viewDidLoad()
+        
+        if (userDefaults!.bool(forKey: "AppleShowAllFiles")) {
+            FinderHiddenFilesOutlet.state = NSControl.StateValue.on
+        } else {
+            FinderHiddenFilesOutlet.state = NSControl.StateValue.off
+        }
     }
 
     override var representedObject: Any? {
@@ -22,6 +28,16 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBOutlet weak var FinderHiddenFilesOutlet: NSButton!
+    
+    @IBAction func FinderHiddenFilesToggle(_ sender: NSButton) {
+        switch sender.state {
+        case .on:
+            userDefaults!.set(true, forKey: "AppleShowAllFiles")
+        case .off:
+            userDefaults!.set(false, forKey: "AppleShowAllFiles")
+        default: break
+        }
+    }
 }
 
