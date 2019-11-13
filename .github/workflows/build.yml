@@ -1,8 +1,8 @@
 on: [push]
-name: Test
+name: Build
 jobs:
-  Test:
-    name: Test
+  Build:
+    name: Build
     runs-on: macOS-latest
     strategy:
         matrix:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Test
+      - name: Build
         run: |
           xcodebuild \
           -project Mac\ Tweaker.xcodeproj \
@@ -19,6 +19,6 @@ jobs:
           CODE_SIGN_IDENTITY="-" \
           CODE_SIGNING_REQUIRED=NO \
           ONLY_ACTIVE_ARCH=NO \
-          clean test
+          clean build
         env: 
          destination: ${{ matrix.destination }}
