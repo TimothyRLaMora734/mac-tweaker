@@ -712,7 +712,7 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uSl-PG-a0F">
                                 <rect key="frame" x="210" y="126" width="129" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Show hidden files" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="qW0-Hn-zF0">
+                                <buttonCell key="cell" type="check" title="Show hidden files" bezelStyle="regularSquare" imagePosition="left" inset="2" id="qW0-Hn-zF0">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -722,6 +722,9 @@
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="FinderHiddenFilesOutlet" destination="uSl-PG-a0F" id="hFt-ub-53z"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
