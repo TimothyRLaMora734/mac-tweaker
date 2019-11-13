@@ -23,5 +23,19 @@ class ViewController: NSViewController {
     }
 
 
+    @IBAction func FinderHiddenFilesToggle(_ sender: NSButton) {
+        let userDefaults = UserDefaults(suiteName: "com.apple.Finder")
+        
+        switch sender.state {
+        case .on:
+            print("on")
+            print(UserDefaults(suiteName: "com.apple.Finder")?.dictionaryRepresentation() as Any)
+            userDefaults!.set(true, forKey: "AppleShowAllFiles")
+        case .off:
+            print("off")
+            userDefaults!.set(false, forKey: "AppleShowAllFiles")
+        default: break
+        }
+    }
 }
 
