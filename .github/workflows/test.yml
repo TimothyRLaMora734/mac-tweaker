@@ -1,0 +1,24 @@
+on: [push]
+name: Test
+jobs:
+  test:
+    name: Test
+    runs-on: macOS-latest
+    strategy:
+        matrix:
+          destination: ['platform=OS X,arch=x86_64']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Build and test
+        run: |
+          xcodebuild \
+          -project Mac\ Tweaker.xcodeproj \
+          -scheme Mac\ Tweaker \
+          -destination "${destination}" \
+          CODE_SIGN_IDENTITY="-" \
+          CODE_SIGNING_REQUIRED=NO \
+          ONLY_ACTIVE_ARCH=NO \
+          clean test
+        env: 
+         destination: ${{ matrix.destination }}
