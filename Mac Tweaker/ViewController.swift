@@ -34,6 +34,12 @@ class ViewController: NSViewController {
         } else {
             finderShowWarningBeforeChangingFileExtension.state = NSControl.StateValue.off
         }
+        
+//        let res = Tweak.task(launchPath: "/Users/donbot", arguments: ["ls"]) //error
+//        print(res)
+        
+        let res = Tweak.task(launchPath: "/bin/zsh", arguments: ["ls"])
+        print("*** ls ***:\n\(res)")
     }
 
     override var representedObject: Any? {
