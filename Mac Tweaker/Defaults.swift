@@ -22,16 +22,13 @@ class Defaults {
         self.isSupported = true
     }
     
-    func read() -> Bool {
-        self.defaults.bool(forKey: self.key)
+    func bool() -> Bool {
+        let cmd: String = RunCommand.task(launchPath: "/usr/bin/defaults", arguments: ["read", self.domain, self.key])
+        return NSString(string: cmd).boolValue
     }
     
-    func set(_ value: Any?) {
-        self.defaults.set(true, forKey: self.key)
-    }
-    
-    func isKeyPresentInUserDefaults(suiteName: String, forKey: String) -> Bool {
-        return UserDefaults(suiteName: suiteName)?.object(forKey: forKey) != nil
+    func set(_ value: Bool) {
+        RunCommand.task(launchPath: "/usr/bin/defaults", arguments: ["write", domain, key, "-bool", String(value)])
     }
 }
 

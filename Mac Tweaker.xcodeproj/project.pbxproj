@@ -14,6 +14,7 @@
 		15C63177237BC55300B126A3 /* Mac_TweakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C63176237BC55300B126A3 /* Mac_TweakerTests.swift */; };
 		15C63182237BC55400B126A3 /* Mac_TweakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C63181237BC55400B126A3 /* Mac_TweakerUITests.swift */; };
 		15D9720E237C9E6C00330FCE /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D9720D237C9E6C00330FCE /* Defaults.swift */; };
+		15D97215237DB77A00330FCE /* RunCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D97214237DB77A00330FCE /* RunCommand.swift */; };
 		B01193D1237DA7AD001534F9 /* Tweak.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01193D0237DA7AD001534F9 /* Tweak.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		15C63181237BC55400B126A3 /* Mac_TweakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mac_TweakerUITests.swift; sourceTree = "<group>"; };
 		15C63183237BC55400B126A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15D9720D237C9E6C00330FCE /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		15D97214237DB77A00330FCE /* RunCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunCommand.swift; sourceTree = "<group>"; };
 		B01193D0237DA7AD001534F9 /* Tweak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweak.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 				15C6316D237BC55300B126A3 /* Mac_Tweaker.entitlements */,
 				15D9720D237C9E6C00330FCE /* Defaults.swift */,
 				B01193D0237DA7AD001534F9 /* Tweak.swift */,
+				15D97214237DB77A00330FCE /* RunCommand.swift */,
 			);
 			path = "Mac Tweaker";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15D9720E237C9E6C00330FCE /* Defaults.swift in Sources */,
+				15D97215237DB77A00330FCE /* RunCommand.swift in Sources */,
 				15C63166237BC54E00B126A3 /* ViewController.swift in Sources */,
 				B01193D1237DA7AD001534F9 /* Tweak.swift in Sources */,
 				15C63164237BC54E00B126A3 /* AppDelegate.swift in Sources */,
