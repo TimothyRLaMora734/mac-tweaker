@@ -13,6 +13,7 @@
 		15C6316B237BC55300B126A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C63169237BC55300B126A3 /* Main.storyboard */; };
 		15C63177237BC55300B126A3 /* Mac_TweakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C63176237BC55300B126A3 /* Mac_TweakerTests.swift */; };
 		15C63182237BC55400B126A3 /* Mac_TweakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C63181237BC55400B126A3 /* Mac_TweakerUITests.swift */; };
+		15D9720E237C9E6C00330FCE /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D9720D237C9E6C00330FCE /* Defaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		15C6317D237BC55400B126A3 /* Mac TweakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mac TweakerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C63181237BC55400B126A3 /* Mac_TweakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mac_TweakerUITests.swift; sourceTree = "<group>"; };
 		15C63183237BC55400B126A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15D9720D237C9E6C00330FCE /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				15C63169237BC55300B126A3 /* Main.storyboard */,
 				15C6316C237BC55300B126A3 /* Info.plist */,
 				15C6316D237BC55300B126A3 /* Mac_Tweaker.entitlements */,
+				15D9720D237C9E6C00330FCE /* Defaults.swift */,
 			);
 			path = "Mac Tweaker";
 			sourceTree = "<group>";
@@ -140,6 +143,8 @@
 			dependencies = (
 			);
 			name = "Mac Tweaker";
+			packageProductDependencies = (
+			);
 			productName = "Mac Tweaker";
 			productReference = 15C63160237BC54E00B126A3 /* Mac Tweaker.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +217,8 @@
 				Base,
 			);
 			mainGroup = 15C63157237BC54E00B126A3;
+			packageReferences = (
+			);
 			productRefGroup = 15C63161237BC54E00B126A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -254,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15D9720E237C9E6C00330FCE /* Defaults.swift in Sources */,
 				15C63166237BC54E00B126A3 /* ViewController.swift in Sources */,
 				15C63164237BC54E00B126A3 /* AppDelegate.swift in Sources */,
 			);
