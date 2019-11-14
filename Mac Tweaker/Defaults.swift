@@ -22,7 +22,7 @@ class Defaults {
         self.isSupported = true
     }
     
-    func read() {
+    func read() -> Bool {
         self.defaults.bool(forKey: self.key)
     }
     
