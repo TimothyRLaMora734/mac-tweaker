@@ -39,6 +39,21 @@ class ViewController: NSViewController {
         }
     }
     
+    
+    let showWarningBeforeRemovingFromiCloud = Defaults(domain: "com.apple.Finder", key: "FXEnableRemoveFromICloudDriveWarning")
+    
+    @IBOutlet weak var showWarningBeforeRemovingFromiCloudOutlet: NSButton!
+    
+    @IBAction func showWarningBeforeRemovingFromiCloudHandler(_ sender: NSButton) {
+        switch sender.state {
+        case .on:
+            showWarningBeforeRemovingFromiCloud.set(true)
+        case .off:
+            showWarningBeforeRemovingFromiCloud.set(false)
+        default: break
+        }
+    }
+    
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
@@ -60,6 +75,13 @@ class ViewController: NSViewController {
             finderShowWarningBeforeChangingFileExtension.state = NSControl.StateValue.on
         } else {
             finderShowWarningBeforeChangingFileExtension.state = NSControl.StateValue.off
+        }
+        
+        // read setting state
+        if (showWarningBeforeRemovingFromiCloud.bool()) {
+            showWarningBeforeRemovingFromiCloudOutlet.state = NSControl.StateValue.on
+        } else {
+            showWarningBeforeRemovingFromiCloudOutlet.state = NSControl.StateValue.off
         }
     }
 
