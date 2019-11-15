@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -689,6 +690,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="480" height="180"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -706,12 +708,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Mac_Tweaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="180"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uSl-PG-a0F">
-                                <rect key="frame" x="128" y="211" width="129" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uSl-PG-a0F">
+                                <rect key="frame" x="128" y="121" width="129" height="18"/>
                                 <buttonCell key="cell" type="check" title="Show hidden files" bezelStyle="regularSquare" imagePosition="left" inset="2" id="qW0-Hn-zF0">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -720,47 +721,70 @@
                                     <action selector="FinderHiddenFilesToggle:" target="XfG-lQ-9wD" id="u1Y-57-GnD"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BFP-JC-cCv">
-                                <rect key="frame" x="18" y="212" width="99" height="16"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BFP-JC-cCv">
+                                <rect key="frame" x="18" y="122" width="99" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Finder settings:" id="vhB-OL-LIt">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddC-Jh-aho">
-                                <rect key="frame" x="128" y="147" width="289" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Show warning before changing an extension" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Gwv-sv-uJJ">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="finderShowWarningBeforeChangingFileExtension:" target="XfG-lQ-9wD" id="bKu-BO-5sA"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57l-Ov-wYf">
-                                <rect key="frame" x="147" y="171" width="215" height="34"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="7" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gde-BV-AH7">
+                                <rect key="frame" x="130" y="38" width="315" height="35"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ddC-Jh-aho">
+                                        <rect key="frame" x="-2" y="19" width="289" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Show warning before changing an extension" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Gwv-sv-uJJ">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="finderShowWarningBeforeChangingFileExtension:" target="XfG-lQ-9wD" id="bKu-BO-5sA"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5DQ-nr-2C7">
+                                        <rect key="frame" x="-2" y="-2" width="319" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Show warning before removing from iCloud Drive" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="fiL-fs-tk7">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showWarningBeforeRemovingFromiCloudHandler:" target="XfG-lQ-9wD" id="IIF-Qf-33a"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="57l-Ov-wYf">
+                                <rect key="frame" x="147" y="81" width="215" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="211" id="gO2-bE-pmi"/>
+                                    <constraint firstAttribute="height" constant="34" id="gmC-w9-7n1"/>
+                                </constraints>
                                 <textFieldCell key="cell" alignment="left" title="If you what show hidden files temporary, use  ⌘ + ⇧ + . shortcut." id="j3Z-ZN-XFX">
                                     <font key="font" metaFont="menu" size="11"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5DQ-nr-2C7">
-                                <rect key="frame" x="128" y="126" width="319" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Show warning before removing from iCloud Drive" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="fiL-fs-tk7">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="showWarningBeforeRemovingFromiCloudHandler:" target="XfG-lQ-9wD" id="IIF-Qf-33a"/>
-                                </connections>
-                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="uSl-PG-a0F" firstAttribute="leading" secondItem="BFP-JC-cCv" secondAttribute="trailing" constant="15" id="3O0-WE-D7v"/>
+                            <constraint firstItem="uSl-PG-a0F" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="43" id="4ev-96-ESv"/>
+                            <constraint firstItem="57l-Ov-wYf" firstAttribute="top" secondItem="uSl-PG-a0F" secondAttribute="bottom" constant="8" id="816-G3-KPf"/>
+                            <constraint firstItem="BFP-JC-cCv" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="AJY-g7-BCw"/>
+                            <constraint firstItem="Gde-BV-AH7" firstAttribute="top" secondItem="57l-Ov-wYf" secondAttribute="bottom" constant="8" id="CDS-Dd-kXg"/>
+                            <constraint firstItem="Gde-BV-AH7" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="130" id="lLL-rt-glW"/>
+                            <constraint firstItem="BFP-JC-cCv" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="42" id="peP-7d-txH"/>
+                            <constraint firstItem="57l-Ov-wYf" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="149" id="xdV-eW-vVz"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="FinderHiddenFilesOutlet" destination="uSl-PG-a0F" id="hFt-ub-53z"/>
@@ -770,7 +794,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="610"/>
         </scene>
     </scenes>
 </document>
